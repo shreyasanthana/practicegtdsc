@@ -8,6 +8,9 @@ import {
   Code,
   Grid,
   theme,
+  Container,
+  Input,
+  Button
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
@@ -15,26 +18,19 @@ import { Logo } from './Logo';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Container>
+      <Box borderWidth = "1px" borderRadius = "1g">
+        <Text fontSize = "lg" align = "center">
+          Create Account
+        </Text>
+        <Text fontSize = "lg" align = "center">
+          Already Have An Account? <Link>Login</Link>
+        </Text>
+        <Input placeholder = "Username"/>
+        <Input placeholder = "Password"/>
+        <Button colorScheme='blue'>Login</Button>
+        </Box>
+      </Container>
     </ChakraProvider>
   );
 }
